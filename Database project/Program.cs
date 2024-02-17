@@ -15,7 +15,46 @@ internal class Program
 
             if (answer == "1")
             {
+                Console.WriteLine("Do které tabulky chcete vložit záznam");
+                Console.WriteLine("1. autor");
+                Console.WriteLine("2. žánr");
+                Console.WriteLine("3. knihy");
+                Console.WriteLine("4. košík");
+                Console.WriteLine("5. zákazník");
+                answer = Console.ReadLine();
+                if (answer == "1")
+                {
+                    Console.WriteLine("");
+                    Console.Write("Jmeno autora: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Příjmení autora: ");
+                    string last_name = Console.ReadLine();
+                    Console.Write("Datum narození autora: ");
+                    string birth_date = Console.ReadLine();
+                    Autor a = new Autor(name,last_name,birth_date);
+                    c.SaveAutor(a);
+                    Console.WriteLine("");
+                }
+                else if (answer == "2")
+                {
 
+                }
+                else if (answer == "3")
+                {
+
+                }
+                else if (answer == "4")
+                {
+
+                }
+                else if (answer == "5")
+                {
+
+                }
+                else
+                {
+                    Console.WriteLine("Wrong input");
+                }
             } 
             else if (answer == "2")
             {
