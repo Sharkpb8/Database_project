@@ -92,5 +92,28 @@ namespace Database_project
                 reader.Close();
             }
         }
+
+        public IEnumerable<Basket> GetAllBasket()
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            using (SqlCommand command = new SqlCommand("SELECT * FROM basket", conn))
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Basket basket = new Basket(
+                        Convert.ToInt32(reader[0].ToString()),
+                        Convert.ToInt32(reader[1].ToString()),
+                        Convert.ToInt32(reader[2].ToString()),
+                        reader[3].ToString(),
+                        reader[4].ToString()
+
+                    );
+                    yield return basket;
+                }
+                reader.Close();
+            }
+        }
     }
 }

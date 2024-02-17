@@ -66,7 +66,13 @@ internal class Program
                 }
                 else if( answer == "4")
                 {
-
+                    Console.WriteLine("");
+                    Console.WriteLine("List košíků");
+                    foreach (Basket i in c.GetAllBasket())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine("");
                 }
                 else if(answer== "5")
                 {
