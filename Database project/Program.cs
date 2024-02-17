@@ -36,15 +36,21 @@ internal class Program
                 answer = Console.ReadLine();
                 if (answer == "1")
                 {
-                    Console.WriteLine("List of autor");
-                    foreach (Autor i in c.GetAll())
+                    Console.WriteLine("List autorů");
+                    foreach (Autor i in c.GetAllAutor())
                     {
                         Console.WriteLine(i);
                     }
+                    Console.WriteLine("");
                 }
                 else if (answer == "2")
                 {
-
+                    Console.WriteLine("List žánrů");
+                    foreach (Genre i in c.GetAllGenre())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine("");
                 }
                 else if(answer == "3")
                 {
