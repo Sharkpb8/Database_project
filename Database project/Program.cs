@@ -36,6 +36,7 @@ internal class Program
                 answer = Console.ReadLine();
                 if (answer == "1")
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("List autorů");
                     foreach (Autor i in c.GetAllAutor())
                     {
@@ -45,6 +46,7 @@ internal class Program
                 }
                 else if (answer == "2")
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("List žánrů");
                     foreach (Genre i in c.GetAllGenre())
                     {
@@ -54,7 +56,13 @@ internal class Program
                 }
                 else if(answer == "3")
                 {
-
+                    Console.WriteLine("");
+                    Console.WriteLine("List knih");
+                    foreach (Book i in c.GetAllBook())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine("");
                 }
                 else if( answer == "4")
                 {
