@@ -1,0 +1,29 @@
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\Database project.exe
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\Database project.dll.config
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\Database project.deps.json
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\Database project.runtimeconfig.json
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\Database project.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\Database project.pdb
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\System.Data.SqlClient.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.csproj.AssemblyReference.cache
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.GeneratedMSBuildEditorConfig.editorconfig
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.AssemblyInfoInputs.cache
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.AssemblyInfo.cs
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.csproj.CoreCompileInputs.cache
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.sourcelink.json
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.csproj.CopyComplete
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\refint\Database project.dll
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.pdb
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\Database project.genruntimeconfig.cache
+D:\Soubory\ostatní\škola\VS\Database project\Database project\obj\Debug\net8.0\ref\Database project.dll
