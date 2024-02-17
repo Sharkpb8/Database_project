@@ -70,7 +70,13 @@ internal class Program
                 }
                 else if(answer== "5")
                 {
-
+                    Console.WriteLine("");
+                    Console.WriteLine("List Zákazníků");
+                    foreach (Customer i in c.GetAllCustomers())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine("");
                 }
                 else
                 {

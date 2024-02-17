@@ -70,5 +70,27 @@ namespace Database_project
                 reader.Close();
             }
         }
+
+        public IEnumerable<Customer> GetAllCustomers()
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            using (SqlCommand command = new SqlCommand("SELECT * FROM customer", conn))
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Customer customer = new Customer(
+                        Convert.ToInt32(reader[0].ToString()),
+                        reader[1].ToString(),
+                        reader[2].ToString(),
+                        reader[3].ToString()
+
+                    );
+                    yield return customer;
+                }
+                reader.Close();
+            }
+        }
     }
 }
