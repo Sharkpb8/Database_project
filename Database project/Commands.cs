@@ -212,5 +212,49 @@ namespace Database_project
                 command.ExecuteNonQuery();
             }
         }
+
+        public void DeleteGenre(int a)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            using (SqlCommand command = new SqlCommand("DELETE FROM genre WHERE id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", a));
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteBook(int a)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            using (SqlCommand command = new SqlCommand("DELETE FROM book WHERE id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", a));
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteCustomer(int a)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            using (SqlCommand command = new SqlCommand("DELETE FROM customer WHERE id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", a));
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteBasket(int a)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            using (SqlCommand command = new SqlCommand("DELETE FROM basket WHERE id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", a));
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

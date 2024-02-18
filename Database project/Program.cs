@@ -127,6 +127,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id žánru který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
+                    c.DeleteGenre(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
@@ -134,6 +135,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id knihy kterou chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
+                    c.DeleteBook(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
@@ -141,6 +143,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id košíku který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
+                    c.DeleteBasket(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
@@ -148,6 +151,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id zákazníka kterého chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
+                    c.DeleteCustomer(id);
                     Console.WriteLine("");
                 }
                 else
