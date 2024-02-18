@@ -148,5 +148,23 @@ namespace Database_project
                 genre.ID = Convert.ToInt32(command.ExecuteScalar());
             }
         }
+
+        public void SaveBook(Book b)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("insert into book (genre_id,autor_id,name,release_date) values (@genreid, @autorid,@name,@releasedate)", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@genreid", b.Genre_id));
+                command.Parameters.Add(new SqlParameter("@autorid", b.Autor_id));
+                command.Parameters.Add(new SqlParameter("@name", b.Name));
+                command.Parameters.Add(new SqlParameter("@releasedate", b.Release_date));
+                command.ExecuteNonQuery();
+                command.CommandText = "Select @@Identity";
+                b.ID = Convert.ToInt32(command.ExecuteScalar());
+            }
+        }
     }
 }

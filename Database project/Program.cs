@@ -46,15 +46,28 @@ internal class Program
                 }
                 else if (answer == "3")
                 {
-
+                    Console.WriteLine("");
+                    Console.Write("Id žánru: ");
+                    int genreid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Id autora: ");
+                    int autorid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Jmeno knihy: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Den vydání: ");
+                    string releasedate = Console.ReadLine();
+                    Book a = new Book(genreid, autorid,name, releasedate);
+                    c.SaveBook(a);
+                    Console.WriteLine("");
                 }
                 else if (answer == "4")
                 {
-
+                    Console.WriteLine("");
+                    Console.WriteLine("");
                 }
                 else if (answer == "5")
                 {
-
+                    Console.WriteLine("");
+                    Console.WriteLine("");
                 }
                 else
                 {
