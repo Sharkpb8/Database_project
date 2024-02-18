@@ -32,7 +32,7 @@ internal class Program
                     string last_name = Console.ReadLine();
                     Console.Write("Datum narození autora: ");
                     string birth_date = Console.ReadLine();
-                    Autor a = new Autor(name,last_name,birth_date);
+                    Autor a = new Autor(name, last_name, birth_date);
                     c.SaveAutor(a);
                     Console.WriteLine("");
                 }
@@ -56,7 +56,7 @@ internal class Program
                     string name = Console.ReadLine();
                     Console.Write("Den vydání: ");
                     string releasedate = Console.ReadLine();
-                    Book a = new Book(genreid, autorid,name, releasedate);
+                    Book a = new Book(genreid, autorid, name, releasedate);
                     c.SaveBook(a);
                     Console.WriteLine("");
                 }
@@ -73,11 +73,11 @@ internal class Program
                     string ebt = Console.ReadLine();
                     if (ebt == "a")
                     {
-                         ebt = "1";
+                        ebt = "1";
                     }
                     else if (ebt == "n")
                     {
-                         ebt = "0";
+                        ebt = "0";
                     }
                     else
                     {
@@ -104,10 +104,56 @@ internal class Program
                 {
                     Console.WriteLine("Wrong input");
                 }
-            } 
+            }
             else if (answer == "2")
             {
-
+                Console.WriteLine("Ze které tabulky chcete smazat záznam");
+                Console.WriteLine("1. autor");
+                Console.WriteLine("2. žánr");
+                Console.WriteLine("3. knihy");
+                Console.WriteLine("4. košík");
+                Console.WriteLine("5. zákazník");
+                answer = Console.ReadLine();
+                if (answer == "1")
+                {
+                    Console.WriteLine("");
+                    Console.Write("Zadajte id autora kterého chcete smazat: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    c.DeleteAutor(id);
+                    Console.WriteLine("");
+                }
+                else if (answer == "2")
+                {
+                    Console.WriteLine("");
+                    Console.Write("Zadajte id žánru který chcete smazat: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("");
+                }
+                else if (answer == "3")
+                {
+                    Console.WriteLine("");
+                    Console.Write("Zadajte id knihy kterou chcete smazat: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("");
+                }
+                else if (answer == "4")
+                {
+                    Console.WriteLine("");
+                    Console.Write("Zadajte id košíku který chcete smazat: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("");
+                }
+                else if (answer == "5")
+                {
+                    Console.WriteLine("");
+                    Console.Write("Zadajte id zákazníka kterého chcete smazat: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine("Wrong Input");
+                }
             } 
             else if(answer == "3")
             {

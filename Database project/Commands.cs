@@ -201,5 +201,16 @@ namespace Database_project
                 b.ID = Convert.ToInt32(command.ExecuteScalar());
             }
         }
+
+        public void DeleteAutor(int a)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            using (SqlCommand command = new SqlCommand("DELETE FROM autor WHERE id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", a));
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }
