@@ -166,5 +166,22 @@ namespace Database_project
                 b.ID = Convert.ToInt32(command.ExecuteScalar());
             }
         }
+
+        public void SaveCustomer(Customer c)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("insert into customer (name,last_name,email) values (@name, @lastname,@email)", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@name", c.Name));
+                command.Parameters.Add(new SqlParameter("@lastname", c.Last_name));
+                command.Parameters.Add(new SqlParameter("@email", c.Email));
+                command.ExecuteNonQuery();
+                command.CommandText = "Select @@Identity";
+                c.ID = Convert.ToInt32(command.ExecuteScalar());
+            }
+        }
     }
 }

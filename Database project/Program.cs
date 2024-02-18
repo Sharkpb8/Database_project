@@ -15,6 +15,7 @@ internal class Program
 
             if (answer == "1")
             {
+                Console.WriteLine();
                 Console.WriteLine("Do které tabulky chcete vložit záznam");
                 Console.WriteLine("1. autor");
                 Console.WriteLine("2. žánr");
@@ -67,6 +68,14 @@ internal class Program
                 else if (answer == "5")
                 {
                     Console.WriteLine("");
+                    Console.Write("Jmeno zákazníka: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Příjmení zákazníka: ");
+                    string lastname = Console.ReadLine();
+                    Console.Write("Email zákazníka: ");
+                    string email = Console.ReadLine();
+                    Customer a = new Customer(name, lastname, email);
+                    c.SaveCustomer(a);
                     Console.WriteLine("");
                 }
                 else
