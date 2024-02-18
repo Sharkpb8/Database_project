@@ -272,5 +272,69 @@ namespace Database_project
                 command.ExecuteNonQuery();
             }
         }
+
+        public void UpdateGenre(Genre g)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("update genre set name = @name " + "where id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", g.ID));
+                command.Parameters.Add(new SqlParameter("@name", g.Name));
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateBook(Book b)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("update book set genre_id = @gi, autor_id = @ai, name = @name, release_date = @rd " + "where id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", b.ID));
+                command.Parameters.Add(new SqlParameter("@gi", b.Genre_id));
+                command.Parameters.Add(new SqlParameter("@ai", b.Autor_id));
+                command.Parameters.Add(new SqlParameter("@name", b.Name));
+                command.Parameters.Add(new SqlParameter("@rd", b.Release_date));
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateCustomer(Customer c)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("update customer set name = @name, last_name = @lastname, email = @email " + "where id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", c.ID));
+                command.Parameters.Add(new SqlParameter("@name", c.Name));
+                command.Parameters.Add(new SqlParameter("@lastname", c.Last_name));
+                command.Parameters.Add(new SqlParameter("@email", c.Email));
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateBasket(Basket b)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("update basket set customer_id = @ci, book_id = @bi, borrow_date = @bd, extended_borrow_time = @ebt " + "where id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", b.ID));
+                command.Parameters.Add(new SqlParameter("@ci", b.Customer_id));
+                command.Parameters.Add(new SqlParameter("@bi", b.Book_id));
+                command.Parameters.Add(new SqlParameter("@bd", b.Date));
+                command.Parameters.Add(new SqlParameter("@ebt", b.Ebt));
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

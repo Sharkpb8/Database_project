@@ -186,21 +186,73 @@ internal class Program
                 else if (answer == "2")
                 {
                     Console.WriteLine("");
+                    Console.Write("Zadejte id žánru který chcete upravit: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Jméno upraveného žánru: ");
+                    string name = Console.ReadLine();
+                    Genre a = new Genre(id,name);
+                    c.UpdateGenre(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
                 {
                     Console.WriteLine("");
+                    Console.Write("Zadejte id knihy kterou chcete upravit: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Id žánru: ");
+                    int genreid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Id autora: ");
+                    int autorid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Jmeno upravené knihy: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Den vydání: ");
+                    string releasedate = Console.ReadLine();
+                    Book a = new Book(id,genreid, autorid, name, releasedate);
+                    c.UpdateBook(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
                 {
                     Console.WriteLine("");
+                    Console.Write("Zadejte id košíku který chcete upravit: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Id zákazníka: ");
+                    int customerid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Id knihy: ");
+                    int bookid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Den vypůjčení: ");
+                    string date = Console.ReadLine();
+                    Console.Write("Prodloužená doba vypujčení(a/n): ");
+                    string ebt = Console.ReadLine();
+                    if (ebt == "a")
+                    {
+                        ebt = "1";
+                    }
+                    else if (ebt == "n")
+                    {
+                        ebt = "0";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong input");
+                    }
+                    Basket a = new Basket(id,customerid, bookid, date, ebt);
+                    c.UpdateBasket(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
                 {
                     Console.WriteLine("");
+                    Console.Write("Zadejte id zákazníka kterého chcete upravit: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Jmeno upraveného zákazníka: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Příjmení upraveného zákazníka: ");
+                    string lastname = Console.ReadLine();
+                    Console.Write("Email upraveného zákazníka: ");
+                    string email = Console.ReadLine();
+                    Customer a = new Customer(id,name, lastname, email);
+                    c.UpdateCustomer(a);
                     Console.WriteLine("");
                 }
                 else
