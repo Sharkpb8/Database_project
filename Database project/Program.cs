@@ -37,7 +37,12 @@ internal class Program
                 }
                 else if (answer == "2")
                 {
-
+                    Console.WriteLine("");
+                    Console.Write("Jméno žánru: ");
+                    string name = Console.ReadLine();
+                    Genre a = new Genre(name);
+                    c.SaveGenre(a);
+                    Console.WriteLine("");
                 }
                 else if (answer == "3")
                 {

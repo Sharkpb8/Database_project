@@ -133,5 +133,20 @@ namespace Database_project
                     autor.ID = Convert.ToInt32(command.ExecuteScalar());
                 }
         }
+
+        public void SaveGenre(Genre genre)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("insert into genre (name) values (@name)", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@name", genre.Name));
+                command.ExecuteNonQuery();
+                command.CommandText = "Select @@Identity";
+                genre.ID = Convert.ToInt32(command.ExecuteScalar());
+            }
+        }
     }
 }
