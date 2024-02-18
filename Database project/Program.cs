@@ -63,6 +63,28 @@ internal class Program
                 else if (answer == "4")
                 {
                     Console.WriteLine("");
+                    Console.Write("Id zákazníka: ");
+                    int customerid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Id knihy: ");
+                    int bookid = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Den vypůjčení: ");
+                    string date = Console.ReadLine();
+                    Console.Write("Prodloužená doba vypujčení(a/n): ");
+                    string ebt = Console.ReadLine();
+                    if (ebt == "a")
+                    {
+                         ebt = "1";
+                    }
+                    else if (ebt == "n")
+                    {
+                         ebt = "0";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong input");
+                    }
+                    Basket a = new Basket(customerid, bookid, date, ebt);
+                    c.SaveBasket(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")

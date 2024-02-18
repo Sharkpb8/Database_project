@@ -183,5 +183,23 @@ namespace Database_project
                 c.ID = Convert.ToInt32(command.ExecuteScalar());
             }
         }
+
+        public void SaveBasket(Basket b)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("insert into basket (customer_id,book_id,borrow_date,extended_borrow_time) values (@customerid, @bookid,@bd,@ebt)", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@customerid", b.Customer_id));
+                command.Parameters.Add(new SqlParameter("@bookid", b.Book_id));
+                command.Parameters.Add(new SqlParameter("@bd", b.Date));
+                command.Parameters.Add(new SqlParameter("@ebt", b.Ebt));
+                command.ExecuteNonQuery();
+                command.CommandText = "Select @@Identity";
+                b.ID = Convert.ToInt32(command.ExecuteScalar());
+            }
+        }
     }
 }
