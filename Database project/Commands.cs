@@ -128,9 +128,16 @@ namespace Database_project
                     command.Parameters.Add(new SqlParameter("@name", autor.Name));
                     command.Parameters.Add(new SqlParameter("@lastname", autor.Last_name));
                     command.Parameters.Add(new SqlParameter("@birthdate", autor.Birth_date));
+                try
+                {
                     command.ExecuteNonQuery();
                     command.CommandText = "Select @@Identity";
                     autor.ID = Convert.ToInt32(command.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Wrong parametrs");
+                }
                 }
         }
 

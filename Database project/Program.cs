@@ -15,7 +15,7 @@ internal class Program
 
             if (answer == "1")
             {
-                Console.WriteLine();
+                Console.WriteLine("");
                 Console.WriteLine("Do které tabulky chcete vložit záznam");
                 Console.WriteLine("1. autor");
                 Console.WriteLine("2. žánr");
@@ -107,6 +107,7 @@ internal class Program
             }
             else if (answer == "2")
             {
+                Console.WriteLine("");
                 Console.WriteLine("Ze které tabulky chcete smazat záznam");
                 Console.WriteLine("1. autor");
                 Console.WriteLine("2. žánr");
@@ -161,6 +162,7 @@ internal class Program
             }
             else if (answer == "3")
             {
+                Console.WriteLine("");
                 Console.WriteLine("Ve které tabulce chcete upravit záznam");
                 Console.WriteLine("1. autor");
                 Console.WriteLine("2. žánr");
@@ -262,6 +264,7 @@ internal class Program
             }
             else if(answer == "4")
             {
+                Console.WriteLine("");
                 Console.WriteLine("Kterou tabulku chcete vypsat");
                 Console.WriteLine("1. autor");
                 Console.WriteLine("2. žánr");
