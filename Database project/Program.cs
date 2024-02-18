@@ -158,10 +158,55 @@ internal class Program
                 {
                     Console.WriteLine("Wrong Input");
                 }
-            } 
-            else if(answer == "3")
+            }
+            else if (answer == "3")
             {
-
+                Console.WriteLine("Ve které tabulce chcete upravit záznam");
+                Console.WriteLine("1. autor");
+                Console.WriteLine("2. žánr");
+                Console.WriteLine("3. knihy");
+                Console.WriteLine("4. košík");
+                Console.WriteLine("5. zákazník");
+                answer = Console.ReadLine();
+                if (answer == "1")
+                {
+                    Console.WriteLine("");
+                    Console.Write("Zadejte id autora kterého chcete upravit: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Jmeno upraveného autora: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Příjmení upraveného autora: ");
+                    string last_name = Console.ReadLine();
+                    Console.Write("Datum narození upraveného autora: ");
+                    string birth_date = Console.ReadLine();
+                    Autor a = new Autor(id,name, last_name, birth_date);
+                    c.UpdateAutor(a);
+                    Console.WriteLine("");
+                }
+                else if (answer == "2")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                }
+                else if (answer == "3")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                }
+                else if (answer == "4")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                }
+                else if (answer == "5")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine("Wrong input");
+                }
             }
             else if(answer == "4")
             {

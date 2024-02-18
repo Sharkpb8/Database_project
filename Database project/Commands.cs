@@ -256,5 +256,21 @@ namespace Database_project
                 command.ExecuteNonQuery();
             }
         }
+
+        public void UpdateAutor(Autor autor)
+        {
+            SqlConnection conn = DatabaseSingleton.GetInstance();
+
+            SqlCommand command = null;
+
+            using (command = new SqlCommand("update autor set name = @name, last_name = @lastname, birth_date = @birthdate " + "where id = @id", conn))
+            {
+                command.Parameters.Add(new SqlParameter("@id", autor.ID));
+                command.Parameters.Add(new SqlParameter("@name", autor.Name));
+                command.Parameters.Add(new SqlParameter("@lastname", autor.Last_name));
+                command.Parameters.Add(new SqlParameter("@birthdate", autor.Birth_date));
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }
