@@ -136,9 +136,10 @@ namespace Database_project
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("Wrong parametrs");
                 }
-                }
+            }
         }
 
         public void SaveGenre(Genre genre)
@@ -150,9 +151,17 @@ namespace Database_project
             using (command = new SqlCommand("insert into genre (name) values (@name)", conn))
             {
                 command.Parameters.Add(new SqlParameter("@name", genre.Name));
-                command.ExecuteNonQuery();
-                command.CommandText = "Select @@Identity";
-                genre.ID = Convert.ToInt32(command.ExecuteScalar());
+                try
+                {
+                    command.ExecuteNonQuery();
+                    command.CommandText = "Select @@Identity";
+                    genre.ID = Convert.ToInt32(command.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -168,9 +177,17 @@ namespace Database_project
                 command.Parameters.Add(new SqlParameter("@autorid", b.Autor_id));
                 command.Parameters.Add(new SqlParameter("@name", b.Name));
                 command.Parameters.Add(new SqlParameter("@releasedate", b.Release_date));
-                command.ExecuteNonQuery();
-                command.CommandText = "Select @@Identity";
-                b.ID = Convert.ToInt32(command.ExecuteScalar());
+                try
+                {
+                    command.ExecuteNonQuery();
+                    command.CommandText = "Select @@Identity";
+                    b.ID = Convert.ToInt32(command.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -185,9 +202,17 @@ namespace Database_project
                 command.Parameters.Add(new SqlParameter("@name", c.Name));
                 command.Parameters.Add(new SqlParameter("@lastname", c.Last_name));
                 command.Parameters.Add(new SqlParameter("@email", c.Email));
-                command.ExecuteNonQuery();
-                command.CommandText = "Select @@Identity";
-                c.ID = Convert.ToInt32(command.ExecuteScalar());
+                try
+                {
+                    command.ExecuteNonQuery();
+                    command.CommandText = "Select @@Identity";
+                    c.ID = Convert.ToInt32(command.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -203,9 +228,17 @@ namespace Database_project
                 command.Parameters.Add(new SqlParameter("@bookid", b.Book_id));
                 command.Parameters.Add(new SqlParameter("@bd", b.Date));
                 command.Parameters.Add(new SqlParameter("@ebt", b.Ebt));
-                command.ExecuteNonQuery();
-                command.CommandText = "Select @@Identity";
-                b.ID = Convert.ToInt32(command.ExecuteScalar());
+                try
+                {
+                    command.ExecuteNonQuery();
+                    command.CommandText = "Select @@Identity";
+                    b.ID = Convert.ToInt32(command.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -216,7 +249,15 @@ namespace Database_project
             using (SqlCommand command = new SqlCommand("DELETE FROM autor WHERE id = @id", conn))
             {
                 command.Parameters.Add(new SqlParameter("@id", a));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
+                
             }
         }
 
@@ -227,7 +268,15 @@ namespace Database_project
             using (SqlCommand command = new SqlCommand("DELETE FROM genre WHERE id = @id", conn))
             {
                 command.Parameters.Add(new SqlParameter("@id", a));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -238,7 +287,15 @@ namespace Database_project
             using (SqlCommand command = new SqlCommand("DELETE FROM book WHERE id = @id", conn))
             {
                 command.Parameters.Add(new SqlParameter("@id", a));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -249,7 +306,15 @@ namespace Database_project
             using (SqlCommand command = new SqlCommand("DELETE FROM customer WHERE id = @id", conn))
             {
                 command.Parameters.Add(new SqlParameter("@id", a));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -260,7 +325,15 @@ namespace Database_project
             using (SqlCommand command = new SqlCommand("DELETE FROM basket WHERE id = @id", conn))
             {
                 command.Parameters.Add(new SqlParameter("@id", a));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -276,7 +349,15 @@ namespace Database_project
                 command.Parameters.Add(new SqlParameter("@name", autor.Name));
                 command.Parameters.Add(new SqlParameter("@lastname", autor.Last_name));
                 command.Parameters.Add(new SqlParameter("@birthdate", autor.Birth_date));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -290,7 +371,15 @@ namespace Database_project
             {
                 command.Parameters.Add(new SqlParameter("@id", g.ID));
                 command.Parameters.Add(new SqlParameter("@name", g.Name));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -307,7 +396,15 @@ namespace Database_project
                 command.Parameters.Add(new SqlParameter("@ai", b.Autor_id));
                 command.Parameters.Add(new SqlParameter("@name", b.Name));
                 command.Parameters.Add(new SqlParameter("@rd", b.Release_date));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -323,7 +420,15 @@ namespace Database_project
                 command.Parameters.Add(new SqlParameter("@name", c.Name));
                 command.Parameters.Add(new SqlParameter("@lastname", c.Last_name));
                 command.Parameters.Add(new SqlParameter("@email", c.Email));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
 
@@ -340,7 +445,15 @@ namespace Database_project
                 command.Parameters.Add(new SqlParameter("@bi", b.Book_id));
                 command.Parameters.Add(new SqlParameter("@bd", b.Date));
                 command.Parameters.Add(new SqlParameter("@ebt", b.Ebt));
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Wrong parametrs");
+                }
             }
         }
     }
