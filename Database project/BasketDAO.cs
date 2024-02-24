@@ -10,7 +10,7 @@ namespace Database_project
 {
     public class BasketDAO
     {
-        public IEnumerable<Basket> GetAllBasket()
+        public IEnumerable<Basket> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -33,7 +33,7 @@ namespace Database_project
             }
         }
 
-        public void SaveBasket(Basket b)
+        public void Save(Basket b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -59,7 +59,7 @@ namespace Database_project
             }
         }
 
-        public void DeleteBasket(int a)
+        public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -78,7 +78,7 @@ namespace Database_project
             }
         }
 
-        public void UpdateBasket(Basket b)
+        public void Update(Basket b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 

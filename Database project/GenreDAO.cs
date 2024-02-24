@@ -10,7 +10,7 @@ namespace Database_project
 {
     public class GenreDAO
     {
-        public IEnumerable<Genre> GetAllGenre()
+        public IEnumerable<Genre> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -29,7 +29,7 @@ namespace Database_project
             }
         }
 
-        public void SaveGenre(Genre genre)
+        public void Save(Genre genre)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -52,7 +52,7 @@ namespace Database_project
             }
         }
 
-        public void DeleteGenre(int a)
+        public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -71,7 +71,7 @@ namespace Database_project
             }
         }
 
-        public void UpdateGenre(Genre g)
+        public void Update(Genre g)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 

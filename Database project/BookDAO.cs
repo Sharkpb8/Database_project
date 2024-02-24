@@ -10,7 +10,7 @@ namespace Database_project
 {
     public class BookDAO
     {
-        public IEnumerable<Book> GetAllBook()
+        public IEnumerable<Book> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -32,7 +32,7 @@ namespace Database_project
             }
         }
 
-        public void SaveBook(Book b)
+        public void Save(Book b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -59,7 +59,7 @@ namespace Database_project
         }
 
 
-        public void DeleteBook(int a)
+        public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -78,7 +78,7 @@ namespace Database_project
             }
         }
 
-        public void UpdateBook(Book b)
+        public void Update(Book b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 

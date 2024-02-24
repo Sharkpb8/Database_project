@@ -10,7 +10,7 @@ namespace Database_project
 {
     public class CustomerDAO
     {
-        public IEnumerable<Customer> GetAllCustomers()
+        public IEnumerable<Customer> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -32,7 +32,7 @@ namespace Database_project
             }
         }
 
-        public void SaveCustomer(Customer c)
+        public void Save(Customer c)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -57,7 +57,7 @@ namespace Database_project
             }
         }
 
-        public void DeleteCustomer(int a)
+        public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -76,7 +76,7 @@ namespace Database_project
             }
         }
 
-        public void UpdateCustomer(Customer c)
+        public void Update(Customer c)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 

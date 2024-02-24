@@ -351,6 +351,15 @@ internal class Program
                     Adao.SaveAutor(a);
                 }
 
+                XmlNodeList GenreNodes = xmlDoc.SelectNodes("/data/genre");
+                foreach (XmlNode gn in GenreNodes)
+                {
+                    string name = gn.SelectSingleNode("name").InnerText;
+
+                    Genre a = new Genre(name);
+                    GDAO.SaveGenre(a);
+                }
+
                 Console.WriteLine("Data uspěšně vložena");
                 Console.WriteLine("");
             }

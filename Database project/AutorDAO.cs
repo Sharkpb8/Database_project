@@ -10,7 +10,7 @@ namespace Database_project
 {
     public class AutorDAO
     {
-        public IEnumerable<Autor> GetAllAutor()
+        public IEnumerable<Autor> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -31,7 +31,7 @@ namespace Database_project
             }
         }
 
-        public void SaveAutor(Autor autor)
+        public void Save(Autor autor)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -56,7 +56,7 @@ namespace Database_project
             }
         }
 
-        public void DeleteAutor(int a)
+        public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -77,7 +77,7 @@ namespace Database_project
         }
 
 
-        public void UpdateAutor(Autor autor)
+        public void Update(Autor autor)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
