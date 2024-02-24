@@ -80,7 +80,7 @@ internal class Program
                     }
                     else
                     {
-                        Console.WriteLine("Wrong input");
+                        m.Wrong();
                     }
                     Basket a = new Basket(customerid, bookid, date, ebt);
                     BaDAO.Save(a);
@@ -101,7 +101,7 @@ internal class Program
                 }
                 else
                 {
-                    Console.WriteLine("Wrong input");
+                    m.Wrong();
                 }
             }
             else if (answer == "2")
@@ -150,7 +150,7 @@ internal class Program
                 }
                 else
                 {
-                    Console.WriteLine("Wrong Input");
+                    m.Wrong();
                 }
             }
             else if (answer == "3")
@@ -223,7 +223,7 @@ internal class Program
                     }
                     else
                     {
-                        Console.WriteLine("Wrong input");
+                        m.Wrong();
                     }
                     Basket a = new Basket(id, customerid, bookid, date, ebt);
                     BaDAO.Update(a);
@@ -246,7 +246,7 @@ internal class Program
                 }
                 else
                 {
-                    Console.WriteLine("Wrong input");
+                    m.Wrong();
                 }
             }
             else if (answer == "4")
@@ -305,7 +305,7 @@ internal class Program
                 }
                 else
                 {
-                    Console.WriteLine("Wrong input");
+                    m.Wrong();
                 }
             }
             else if (answer == "5")
@@ -343,13 +343,13 @@ internal class Program
                 }
                 else
                 {
-                    Console.WriteLine("Wrong Input");
+                    m.Wrong();
                 }
                 Console.WriteLine("Informace byly uspěšně vloženy");
             }
             else
             {
-                Console.WriteLine("Wrong input");
+                m.Wrong();
             }
         }
     }

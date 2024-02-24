@@ -32,5 +32,10 @@ namespace Database_project
         {
             Console.WriteLine(" ");
         }
+
+        public void Wrong()
+        {
+            Console.WriteLine("Wrong input");
+        }
     }
 }
