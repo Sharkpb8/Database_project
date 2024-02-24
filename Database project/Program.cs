@@ -4,7 +4,11 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Commands c = new Commands();
+        AutorDAO Adao = new AutorDAO();
+        GenreDAO GDAO = new GenreDAO();
+        BookDAO BoDAO = new BookDAO();
+        CustomerDAO CDAO = new CustomerDAO();
+        BasketDAO BaDAO = new BasketDAO();
         while (true)
         {
             Console.WriteLine("1. Vložit do databáze");
@@ -33,7 +37,7 @@ internal class Program
                     Console.Write("Datum narození autora: ");
                     string birth_date = Console.ReadLine();
                     Autor a = new Autor(name, last_name, birth_date);
-                    c.SaveAutor(a);
+                    Adao.SaveAutor(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "2")
@@ -42,7 +46,7 @@ internal class Program
                     Console.Write("Jméno žánru: ");
                     string name = Console.ReadLine();
                     Genre a = new Genre(name);
-                    c.SaveGenre(a);
+                    GDAO.SaveGenre(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
@@ -57,7 +61,7 @@ internal class Program
                     Console.Write("Den vydání: ");
                     string releasedate = Console.ReadLine();
                     Book a = new Book(genreid, autorid, name, releasedate);
-                    c.SaveBook(a);
+                    BoDAO.SaveBook(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
@@ -84,7 +88,7 @@ internal class Program
                         Console.WriteLine("Wrong input");
                     }
                     Basket a = new Basket(customerid, bookid, date, ebt);
-                    c.SaveBasket(a);
+                    BaDAO.SaveBasket(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
@@ -97,7 +101,7 @@ internal class Program
                     Console.Write("Email zákazníka: ");
                     string email = Console.ReadLine();
                     Customer a = new Customer(name, lastname, email);
-                    c.SaveCustomer(a);
+                    CDAO.SaveCustomer(a);
                     Console.WriteLine("");
                 }
                 else
@@ -120,7 +124,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id autora kterého chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    c.DeleteAutor(id);
+                    Adao.DeleteAutor(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "2")
@@ -128,7 +132,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id žánru který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    c.DeleteGenre(id);
+                    GDAO.DeleteGenre(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
@@ -136,7 +140,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id knihy kterou chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    c.DeleteBook(id);
+                    BoDAO.DeleteBook(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
@@ -144,7 +148,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id košíku který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    c.DeleteBasket(id);
+                    BaDAO.DeleteBasket(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
@@ -152,7 +156,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id zákazníka kterého chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    c.DeleteCustomer(id);
+                    CDAO.DeleteCustomer(id);
                     Console.WriteLine("");
                 }
                 else
@@ -182,7 +186,7 @@ internal class Program
                     Console.Write("Datum narození upraveného autora: ");
                     string birth_date = Console.ReadLine();
                     Autor a = new Autor(id,name, last_name, birth_date);
-                    c.UpdateAutor(a);
+                    Adao.UpdateAutor(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "2")
@@ -193,7 +197,7 @@ internal class Program
                     Console.Write("Jméno upraveného žánru: ");
                     string name = Console.ReadLine();
                     Genre a = new Genre(id,name);
-                    c.UpdateGenre(a);
+                    GDAO.UpdateGenre(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
@@ -210,7 +214,7 @@ internal class Program
                     Console.Write("Den vydání: ");
                     string releasedate = Console.ReadLine();
                     Book a = new Book(id,genreid, autorid, name, releasedate);
-                    c.UpdateBook(a);
+                    BoDAO.UpdateBook(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
@@ -239,7 +243,7 @@ internal class Program
                         Console.WriteLine("Wrong input");
                     }
                     Basket a = new Basket(id,customerid, bookid, date, ebt);
-                    c.UpdateBasket(a);
+                    BaDAO.UpdateBasket(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
@@ -254,7 +258,7 @@ internal class Program
                     Console.Write("Email upraveného zákazníka: ");
                     string email = Console.ReadLine();
                     Customer a = new Customer(id,name, lastname, email);
-                    c.UpdateCustomer(a);
+                    CDAO.UpdateCustomer(a);
                     Console.WriteLine("");
                 }
                 else
@@ -276,7 +280,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List autorů");
-                    foreach (Autor i in c.GetAllAutor())
+                    foreach (Autor i in Adao.GetAllAutor())
                     {
                         Console.WriteLine(i);
                     }
@@ -286,7 +290,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List žánrů");
-                    foreach (Genre i in c.GetAllGenre())
+                    foreach (Genre i in GDAO.GetAllGenre())
                     {
                         Console.WriteLine(i);
                     }
@@ -296,7 +300,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List knih");
-                    foreach (Book i in c.GetAllBook())
+                    foreach (Book i in BoDAO.GetAllBook())
                     {
                         Console.WriteLine(i);
                     }
@@ -306,7 +310,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List košíků");
-                    foreach (Basket i in c.GetAllBasket())
+                    foreach (Basket i in BaDAO.GetAllBasket())
                     {
                         Console.WriteLine(i);
                     }
@@ -316,7 +320,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List Zákazníků");
-                    foreach (Customer i in c.GetAllCustomers())
+                    foreach (Customer i in CDAO.GetAllCustomers())
                     {
                         Console.WriteLine(i);
                     }
