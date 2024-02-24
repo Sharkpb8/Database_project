@@ -1,7 +1,8 @@
 <data>
-    <autor>
-        <name>John</name>
-        <last_name>Doe</last_name>
-		<birth_date>03-04-1875</birth_date>
-    </autor>
+	<basket>
+		<customer_id>7</customer_id>
+		<book_id>7</book_id>
+		<borrow_date>05-05-2024</borrow_date>
+		<ebt>1</ebt>
+	</basket>
 </data>

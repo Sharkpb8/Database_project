@@ -1,5 +1,7 @@
 ﻿using Database_project;
+using System.Net;
 using System.Xml;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Program
 {
@@ -39,7 +41,7 @@ internal class Program
                     Console.Write("Datum narození autora: ");
                     string birth_date = Console.ReadLine();
                     Autor a = new Autor(name, last_name, birth_date);
-                    Adao.SaveAutor(a);
+                    Adao.Save(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "2")
@@ -48,7 +50,7 @@ internal class Program
                     Console.Write("Jméno žánru: ");
                     string name = Console.ReadLine();
                     Genre a = new Genre(name);
-                    GDAO.SaveGenre(a);
+                    GDAO.Save(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
@@ -63,7 +65,7 @@ internal class Program
                     Console.Write("Den vydání: ");
                     string releasedate = Console.ReadLine();
                     Book a = new Book(genreid, autorid, name, releasedate);
-                    BoDAO.SaveBook(a);
+                    BoDAO.Save(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
@@ -90,7 +92,7 @@ internal class Program
                         Console.WriteLine("Wrong input");
                     }
                     Basket a = new Basket(customerid, bookid, date, ebt);
-                    BaDAO.SaveBasket(a);
+                    BaDAO.Save(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
@@ -103,7 +105,7 @@ internal class Program
                     Console.Write("Email zákazníka: ");
                     string email = Console.ReadLine();
                     Customer a = new Customer(name, lastname, email);
-                    CDAO.SaveCustomer(a);
+                    CDAO.Save(a);
                     Console.WriteLine("");
                 }
                 else
@@ -126,7 +128,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id autora kterého chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    Adao.DeleteAutor(id);
+                    Adao.Delete(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "2")
@@ -134,7 +136,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id žánru který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    GDAO.DeleteGenre(id);
+                    GDAO.Delete(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
@@ -142,7 +144,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id knihy kterou chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    BoDAO.DeleteBook(id);
+                    BoDAO.Delete(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
@@ -150,7 +152,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id košíku který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    BaDAO.DeleteBasket(id);
+                    BaDAO.Delete(id);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
@@ -158,7 +160,7 @@ internal class Program
                     Console.WriteLine("");
                     Console.Write("Zadajte id zákazníka kterého chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
-                    CDAO.DeleteCustomer(id);
+                    CDAO.Delete(id);
                     Console.WriteLine("");
                 }
                 else
@@ -188,7 +190,7 @@ internal class Program
                     Console.Write("Datum narození upraveného autora: ");
                     string birth_date = Console.ReadLine();
                     Autor a = new Autor(id, name, last_name, birth_date);
-                    Adao.UpdateAutor(a);
+                    Adao.Update(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "2")
@@ -199,7 +201,7 @@ internal class Program
                     Console.Write("Jméno upraveného žánru: ");
                     string name = Console.ReadLine();
                     Genre a = new Genre(id, name);
-                    GDAO.UpdateGenre(a);
+                    GDAO.Update(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "3")
@@ -216,7 +218,7 @@ internal class Program
                     Console.Write("Den vydání: ");
                     string releasedate = Console.ReadLine();
                     Book a = new Book(id, genreid, autorid, name, releasedate);
-                    BoDAO.UpdateBook(a);
+                    BoDAO.Update(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "4")
@@ -245,7 +247,7 @@ internal class Program
                         Console.WriteLine("Wrong input");
                     }
                     Basket a = new Basket(id, customerid, bookid, date, ebt);
-                    BaDAO.UpdateBasket(a);
+                    BaDAO.Update(a);
                     Console.WriteLine("");
                 }
                 else if (answer == "5")
@@ -260,7 +262,7 @@ internal class Program
                     Console.Write("Email upraveného zákazníka: ");
                     string email = Console.ReadLine();
                     Customer a = new Customer(id, name, lastname, email);
-                    CDAO.UpdateCustomer(a);
+                    CDAO.Update(a);
                     Console.WriteLine("");
                 }
                 else
@@ -282,7 +284,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List autorů");
-                    foreach (Autor i in Adao.GetAllAutor())
+                    foreach (Autor i in Adao.GetAll())
                     {
                         Console.WriteLine(i);
                     }
@@ -292,7 +294,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List žánrů");
-                    foreach (Genre i in GDAO.GetAllGenre())
+                    foreach (Genre i in GDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
@@ -302,7 +304,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List knih");
-                    foreach (Book i in BoDAO.GetAllBook())
+                    foreach (Book i in BoDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
@@ -312,7 +314,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List košíků");
-                    foreach (Basket i in BaDAO.GetAllBasket())
+                    foreach (Basket i in BaDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
@@ -322,7 +324,7 @@ internal class Program
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List Zákazníků");
-                    foreach (Customer i in CDAO.GetAllCustomers())
+                    foreach (Customer i in CDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
@@ -337,7 +339,7 @@ internal class Program
             {
                 Console.WriteLine("");
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load("data.xml"); // Assuming data.xml is the file containing your XML data
+                xmlDoc.Load("data.xml");
 
                 // Parse autor data
                 XmlNodeList AutorNodes = xmlDoc.SelectNodes("/data/autor");
@@ -348,7 +350,7 @@ internal class Program
                     string birthDate = an.SelectSingleNode("birth_date").InnerText;
 
                     Autor a = new Autor( name, lastName, birthDate);
-                    Adao.SaveAutor(a);
+                    Adao.Save(a);
                 }
 
                 XmlNodeList GenreNodes = xmlDoc.SelectNodes("/data/genre");
@@ -357,8 +359,44 @@ internal class Program
                     string name = gn.SelectSingleNode("name").InnerText;
 
                     Genre a = new Genre(name);
-                    GDAO.SaveGenre(a);
+                    GDAO.Save(a);
                 }
+
+                XmlNodeList BookNodes = xmlDoc.SelectNodes("/data/book");
+                foreach (XmlNode bn in BookNodes)
+                {
+                    int genre_id = int.Parse(bn.SelectSingleNode("genre_id").InnerText);
+                    int autor_id = int.Parse(bn.SelectSingleNode("autor_id").InnerText);
+                    string name = bn.SelectSingleNode("name").InnerText;
+                    string release_date = bn.SelectSingleNode("release_date").InnerText;
+
+                    Book a = new Book(genre_id,autor_id,name, release_date);
+                    BoDAO.Save(a);
+                }
+
+                XmlNodeList CustomerNodes = xmlDoc.SelectNodes("/data/customer");
+                foreach (XmlNode cn in CustomerNodes)
+                {
+                    string name = cn.SelectSingleNode("name").InnerText;
+                    string last_name = cn.SelectSingleNode("last_name").InnerText;
+                    string birth_date = cn.SelectSingleNode("birth_date").InnerText;
+
+                    Customer a = new Customer(name, last_name, birth_date);
+                    CDAO.Save(a);
+                }
+
+                XmlNodeList BasketNodes = xmlDoc.SelectNodes("/data/basket");
+                foreach (XmlNode bn in BasketNodes)
+                {
+                    int customer_id = int.Parse(bn.SelectSingleNode("customer_id").InnerText);
+                    int book_id = int.Parse(bn.SelectSingleNode("book_id").InnerText);
+                    string borrow_date = bn.SelectSingleNode("borrow_date").InnerText;
+                    string ebt = bn.SelectSingleNode("ebt").InnerText;
+
+                    Basket a = new Basket(customer_id, book_id, borrow_date, ebt);
+                    BaDAO.Save(a);
+                }
+
 
                 Console.WriteLine("Data uspěšně vložena");
                 Console.WriteLine("");
