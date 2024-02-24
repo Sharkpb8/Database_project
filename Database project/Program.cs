@@ -20,6 +20,8 @@ internal class Program
 
             if (answer == "1")
             {
+                m.Space();
+                Console.WriteLine("Do které tabulky chcete vložit záznam");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
@@ -106,6 +108,8 @@ internal class Program
             }
             else if (answer == "2")
             {
+                m.Space();
+                Console.WriteLine("Ze které tabulky chcete smazat záznam");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
@@ -155,6 +159,8 @@ internal class Program
             }
             else if (answer == "3")
             {
+                m.Space();
+                Console.WriteLine("Ve které tabulce chcete upravit záznam");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
@@ -251,6 +257,8 @@ internal class Program
             }
             else if (answer == "4")
             {
+                m.Space();
+                Console.WriteLine("Kterou tabulku chcete vypsat");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
@@ -310,6 +318,8 @@ internal class Program
             }
             else if (answer == "5")
             {
+                m.Space();
+                Console.WriteLine("Do které tabulky chcete importovat data");
                 m.TableOptions();
                 Console.WriteLine("6.všech");
                 answer = Console.ReadLine();

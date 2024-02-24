@@ -8,6 +8,7 @@ namespace Database_project
 {
     public class Menu
     {
+        //vypíše možnosti pro menu
         public void MenuOptions()
         {
             Console.WriteLine("1. Vložit do databáze");
@@ -17,10 +18,9 @@ namespace Database_project
             Console.WriteLine("5. vložit do databáze ze souboru");
         }
 
+        //vypíše možnosti pro tabulky
         public void TableOptions()
         {
-            Space();
-            Console.WriteLine("Do které tabulky chcete vložit záznam");
             Console.WriteLine("1. autor");
             Console.WriteLine("2. žánr");
             Console.WriteLine("3. knihy");
@@ -28,11 +28,13 @@ namespace Database_project
             Console.WriteLine("5. zákazník");
         }
 
+        //vytvoří prázdný řádek
         public void Space()
         {
             Console.WriteLine(" ");
         }
 
+        //vypíše Wrong input
         public void Wrong()
         {
             Console.WriteLine("Wrong input");
