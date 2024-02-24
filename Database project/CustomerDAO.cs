@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Database_project
 {
@@ -97,6 +98,22 @@ namespace Database_project
                     Console.WriteLine("");
                     Console.WriteLine("Wrong parametrs");
                 }
+            }
+        }
+
+        public void Import(Customer c)
+        {
+            XmlDocument x = new XmlDocument();
+            x.Load("data.xml");
+            XmlNodeList CustomerNodes = x.SelectNodes("/data/customer");
+            foreach (XmlNode cn in CustomerNodes)
+            {
+                string name = cn.SelectSingleNode("name").InnerText;
+                string last_name = cn.SelectSingleNode("last_name").InnerText;
+                string birth_date = cn.SelectSingleNode("birth_date").InnerText;
+
+                Customer a = new Customer(name, last_name, birth_date);
+                Save(a);
             }
         }
     }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Database_project
 {
@@ -90,6 +91,20 @@ namespace Database_project
                     Console.WriteLine("");
                     Console.WriteLine("Wrong parametrs");
                 }
+            }
+        }
+
+        public void Import(Genre g)
+        {
+            XmlDocument x = new XmlDocument();
+            x.Load("data.xml");
+            XmlNodeList GenreNodes = x.SelectNodes("/data/genre");
+            foreach (XmlNode gn in GenreNodes)
+            {
+                string name = gn.SelectSingleNode("name").InnerText;
+
+                Genre a = new Genre(name);
+                Save(a);
             }
         }
     }

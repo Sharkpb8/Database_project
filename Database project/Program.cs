@@ -1,7 +1,7 @@
 ﻿using Database_project;
 using System.Net;
 using System.Xml;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 internal class Program
 {
@@ -338,68 +338,14 @@ internal class Program
             else if (answer == "5")
             {
                 Console.WriteLine("");
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load("data.xml");
-
-                // Parse autor data
-                XmlNodeList AutorNodes = xmlDoc.SelectNodes("/data/autor");
-                foreach (XmlNode an in AutorNodes)
-                {
-                    string name = an.SelectSingleNode("name").InnerText;
-                    string lastName = an.SelectSingleNode("last_name").InnerText;
-                    string birthDate = an.SelectSingleNode("birth_date").InnerText;
-
-                    Autor a = new Autor( name, lastName, birthDate);
-                    Adao.Save(a);
-                }
-
-                XmlNodeList GenreNodes = xmlDoc.SelectNodes("/data/genre");
-                foreach (XmlNode gn in GenreNodes)
-                {
-                    string name = gn.SelectSingleNode("name").InnerText;
-
-                    Genre a = new Genre(name);
-                    GDAO.Save(a);
-                }
-
-                XmlNodeList BookNodes = xmlDoc.SelectNodes("/data/book");
-                foreach (XmlNode bn in BookNodes)
-                {
-                    int genre_id = int.Parse(bn.SelectSingleNode("genre_id").InnerText);
-                    int autor_id = int.Parse(bn.SelectSingleNode("autor_id").InnerText);
-                    string name = bn.SelectSingleNode("name").InnerText;
-                    string release_date = bn.SelectSingleNode("release_date").InnerText;
-
-                    Book a = new Book(genre_id,autor_id,name, release_date);
-                    BoDAO.Save(a);
-                }
-
-                XmlNodeList CustomerNodes = xmlDoc.SelectNodes("/data/customer");
-                foreach (XmlNode cn in CustomerNodes)
-                {
-                    string name = cn.SelectSingleNode("name").InnerText;
-                    string last_name = cn.SelectSingleNode("last_name").InnerText;
-                    string birth_date = cn.SelectSingleNode("birth_date").InnerText;
-
-                    Customer a = new Customer(name, last_name, birth_date);
-                    CDAO.Save(a);
-                }
-
-                XmlNodeList BasketNodes = xmlDoc.SelectNodes("/data/basket");
-                foreach (XmlNode bn in BasketNodes)
-                {
-                    int customer_id = int.Parse(bn.SelectSingleNode("customer_id").InnerText);
-                    int book_id = int.Parse(bn.SelectSingleNode("book_id").InnerText);
-                    string borrow_date = bn.SelectSingleNode("borrow_date").InnerText;
-                    string ebt = bn.SelectSingleNode("ebt").InnerText;
-
-                    Basket a = new Basket(customer_id, book_id, borrow_date, ebt);
-                    BaDAO.Save(a);
-                }
-
-
-                Console.WriteLine("Data uspěšně vložena");
-                Console.WriteLine("");
+                Console.WriteLine("Do které tabulky chcete importovat data");
+                Console.WriteLine("1. autor");
+                Console.WriteLine("2. žánr");
+                Console.WriteLine("3. knihy");
+                Console.WriteLine("4. košík");
+                Console.WriteLine("5. zákazník");
+                Console.WriteLine("6.všech");
+                answer = Console.ReadLine();
             }
             else
             {
