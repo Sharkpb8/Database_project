@@ -1,4 +1,5 @@
 ﻿using Database_project;
+using System.Xml;
 
 internal class Program
 {
@@ -15,6 +16,7 @@ internal class Program
             Console.WriteLine("2. Smazat z databáze");
             Console.WriteLine("3. Úprava záznamu");
             Console.WriteLine("4. výpis databáze");
+            Console.WriteLine("5. vložit do databáze ze souboru");
             string answer = Console.ReadLine();
 
             if (answer == "1")
@@ -185,7 +187,7 @@ internal class Program
                     string last_name = Console.ReadLine();
                     Console.Write("Datum narození upraveného autora: ");
                     string birth_date = Console.ReadLine();
-                    Autor a = new Autor(id,name, last_name, birth_date);
+                    Autor a = new Autor(id, name, last_name, birth_date);
                     Adao.UpdateAutor(a);
                     Console.WriteLine("");
                 }
@@ -196,7 +198,7 @@ internal class Program
                     int id = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Jméno upraveného žánru: ");
                     string name = Console.ReadLine();
-                    Genre a = new Genre(id,name);
+                    Genre a = new Genre(id, name);
                     GDAO.UpdateGenre(a);
                     Console.WriteLine("");
                 }
@@ -213,7 +215,7 @@ internal class Program
                     string name = Console.ReadLine();
                     Console.Write("Den vydání: ");
                     string releasedate = Console.ReadLine();
-                    Book a = new Book(id,genreid, autorid, name, releasedate);
+                    Book a = new Book(id, genreid, autorid, name, releasedate);
                     BoDAO.UpdateBook(a);
                     Console.WriteLine("");
                 }
@@ -242,7 +244,7 @@ internal class Program
                     {
                         Console.WriteLine("Wrong input");
                     }
-                    Basket a = new Basket(id,customerid, bookid, date, ebt);
+                    Basket a = new Basket(id, customerid, bookid, date, ebt);
                     BaDAO.UpdateBasket(a);
                     Console.WriteLine("");
                 }
@@ -257,7 +259,7 @@ internal class Program
                     string lastname = Console.ReadLine();
                     Console.Write("Email upraveného zákazníka: ");
                     string email = Console.ReadLine();
-                    Customer a = new Customer(id,name, lastname, email);
+                    Customer a = new Customer(id, name, lastname, email);
                     CDAO.UpdateCustomer(a);
                     Console.WriteLine("");
                 }
@@ -266,7 +268,7 @@ internal class Program
                     Console.WriteLine("Wrong input");
                 }
             }
-            else if(answer == "4")
+            else if (answer == "4")
             {
                 Console.WriteLine("");
                 Console.WriteLine("Kterou tabulku chcete vypsat");
@@ -296,7 +298,7 @@ internal class Program
                     }
                     Console.WriteLine("");
                 }
-                else if(answer == "3")
+                else if (answer == "3")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List knih");
@@ -306,7 +308,7 @@ internal class Program
                     }
                     Console.WriteLine("");
                 }
-                else if( answer == "4")
+                else if (answer == "4")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List košíků");
@@ -316,7 +318,7 @@ internal class Program
                     }
                     Console.WriteLine("");
                 }
-                else if(answer== "5")
+                else if (answer == "5")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("List Zákazníků");
@@ -330,6 +332,27 @@ internal class Program
                 {
                     Console.WriteLine("Wrong input");
                 }
+            }
+            else if (answer == "5")
+            {
+                Console.WriteLine("");
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("data.xml"); // Assuming data.xml is the file containing your XML data
+
+                // Parse autor data
+                XmlNodeList AutorNodes = xmlDoc.SelectNodes("/data/autor");
+                foreach (XmlNode an in AutorNodes)
+                {
+                    string name = an.SelectSingleNode("name").InnerText;
+                    string lastName = an.SelectSingleNode("last_name").InnerText;
+                    string birthDate = an.SelectSingleNode("birth_date").InnerText;
+
+                    Autor a = new Autor( name, lastName, birthDate);
+                    Adao.SaveAutor(a);
+                }
+
+                Console.WriteLine("Data uspěšně vložena");
+                Console.WriteLine("");
             }
             else
             {
