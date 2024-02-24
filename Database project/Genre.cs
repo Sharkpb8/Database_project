@@ -25,7 +25,7 @@ namespace Database_project
         }
 
         /// <summary>
-        /// Konstruktor třídy žánr pro vytvoření instance s neznámým ID.
+        /// Konstruktor třídy žánr pro vytvoření instance s neznámým ID
         /// </summary>
         public Genre(string name)
         {
