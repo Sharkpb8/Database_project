@@ -1,8 +1,7 @@
 # Database Project
 
 ## Overview
-This C# application provides functions to interact with a database.
-It can also import data from XML files into the database.
+This C# application provides functions to interact with database for library.
 
 ## Features
 - **Create:** Add new records to database.
