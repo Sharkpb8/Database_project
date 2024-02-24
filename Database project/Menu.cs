@@ -27,17 +27,5 @@ namespace Database_project
             Console.WriteLine("4. košík");
             Console.WriteLine("5. zákazník");
         }
-
-        //vytvoří prázdný řádek
-        public void Space()
-        {
-            Console.WriteLine(" ");
-        }
-
-        //vypíše Wrong input
-        public void Wrong()
-        {
-            Console.WriteLine("Wrong input");
-        }
     }
 }

@@ -20,13 +20,13 @@ internal class Program
 
             if (answer == "1")
             {
-                m.Space();
+                Console.WriteLine(" ");
                 Console.WriteLine("Do které tabulky chcete vložit záznam");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Jmeno autora: ");
                     string name = Console.ReadLine();
                     Console.Write("Příjmení autora: ");
@@ -35,20 +35,20 @@ internal class Program
                     string birth_date = Console.ReadLine();
                     Autor a = new Autor(name, last_name, birth_date);
                     Adao.Save(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "2")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Jméno žánru: ");
                     string name = Console.ReadLine();
                     Genre a = new Genre(name);
                     GDAO.Save(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "3")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Id žánru: ");
                     int genreid = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Id autora: ");
@@ -59,11 +59,11 @@ internal class Program
                     string releasedate = Console.ReadLine();
                     Book a = new Book(genreid, autorid, name, releasedate);
                     BoDAO.Save(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "4")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Id zákazníka: ");
                     int customerid = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Id knihy: ");
@@ -82,15 +82,15 @@ internal class Program
                     }
                     else
                     {
-                        m.Wrong();
+                       Console.WriteLine("Wrong input");
                     }
                     Basket a = new Basket(customerid, bookid, date, ebt);
                     BaDAO.Save(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "5")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Jmeno zákazníka: ");
                     string name = Console.ReadLine();
                     Console.Write("Příjmení zákazníka: ");
@@ -99,73 +99,73 @@ internal class Program
                     string email = Console.ReadLine();
                     Customer a = new Customer(name, lastname, email);
                     CDAO.Save(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else
                 {
-                    m.Wrong();
+                   Console.WriteLine("Wrong input");
                 }
             }
             else if (answer == "2")
             {
-                m.Space();
+                Console.WriteLine(" ");
                 Console.WriteLine("Ze které tabulky chcete smazat záznam");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadajte id autora kterého chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     Adao.Delete(id);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "2")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadajte id žánru který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     GDAO.Delete(id);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "3")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadajte id knihy kterou chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     BoDAO.Delete(id);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "4")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadajte id košíku který chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     BaDAO.Delete(id);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "5")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadajte id zákazníka kterého chcete smazat: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     CDAO.Delete(id);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else
                 {
-                    m.Wrong();
+                   Console.WriteLine("Wrong input");
                 }
             }
             else if (answer == "3")
             {
-                m.Space();
+                Console.WriteLine(" ");
                 Console.WriteLine("Ve které tabulce chcete upravit záznam");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadejte id autora kterého chcete upravit: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Jmeno upraveného autora: ");
@@ -176,22 +176,22 @@ internal class Program
                     string birth_date = Console.ReadLine();
                     Autor a = new Autor(id, name, last_name, birth_date);
                     Adao.Update(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "2")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadejte id žánru který chcete upravit: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Jméno upraveného žánru: ");
                     string name = Console.ReadLine();
                     Genre a = new Genre(id, name);
                     GDAO.Update(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "3")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadejte id knihy kterou chcete upravit: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Id žánru: ");
@@ -204,11 +204,11 @@ internal class Program
                     string releasedate = Console.ReadLine();
                     Book a = new Book(id, genreid, autorid, name, releasedate);
                     BoDAO.Update(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "4")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadejte id košíku který chcete upravit: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Id zákazníka: ");
@@ -229,15 +229,15 @@ internal class Program
                     }
                     else
                     {
-                        m.Wrong();
+                       Console.WriteLine("Wrong input");
                     }
                     Basket a = new Basket(id, customerid, bookid, date, ebt);
                     BaDAO.Update(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "5")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.Write("Zadejte id zákazníka kterého chcete upravit: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Jmeno upraveného zákazníka: ");
@@ -248,77 +248,77 @@ internal class Program
                     string email = Console.ReadLine();
                     Customer a = new Customer(id, name, lastname, email);
                     CDAO.Update(a);
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else
                 {
-                    m.Wrong();
+                   Console.WriteLine("Wrong input");
                 }
             }
             else if (answer == "4")
             {
-                m.Space();
+                Console.WriteLine(" ");
                 Console.WriteLine("Kterou tabulku chcete vypsat");
                 m.TableOptions();
                 answer = Console.ReadLine();
                 if (answer == "1")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.WriteLine("List autorů");
                     foreach (Autor i in Adao.GetAll())
                     {
                         Console.WriteLine(i);
                     }
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "2")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.WriteLine("List žánrů");
                     foreach (Genre i in GDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "3")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.WriteLine("List knih");
                     foreach (Book i in BoDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "4")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.WriteLine("List košíků");
                     foreach (Basket i in BaDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else if (answer == "5")
                 {
-                    m.Space();
+                    Console.WriteLine(" ");
                     Console.WriteLine("List Zákazníků");
                     foreach (Customer i in CDAO.GetAll())
                     {
                         Console.WriteLine(i);
                     }
-                    m.Space();
+                    Console.WriteLine(" ");
                 }
                 else
                 {
-                    m.Wrong();
+                   Console.WriteLine("Wrong input");
                 }
             }
             else if (answer == "5")
             {
-                m.Space();
+                Console.WriteLine(" ");
                 Console.WriteLine("Do které tabulky chcete importovat data");
                 m.TableOptions();
                 Console.WriteLine("6.všech");
@@ -353,13 +353,13 @@ internal class Program
                 }
                 else
                 {
-                    m.Wrong();
+                   Console.WriteLine("Wrong input");
                 }
                 Console.WriteLine("Informace byly uspěšně vloženy");
             }
             else
             {
-                m.Wrong();
+               Console.WriteLine("Wrong input");
             }
         }
     }
