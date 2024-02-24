@@ -30,7 +30,7 @@ namespace Database_project
             }
         }
 
-        public void Save(Genre genre)
+        public void Save(Genre g)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -38,12 +38,12 @@ namespace Database_project
 
             using (command = new SqlCommand("insert into genre (name) values (@name)", conn))
             {
-                command.Parameters.Add(new SqlParameter("@name", genre.Name));
+                command.Parameters.Add(new SqlParameter("@name", g.Name));
                 try
                 {
                     command.ExecuteNonQuery();
                     command.CommandText = "Select @@Identity";
-                    genre.ID = Convert.ToInt32(command.ExecuteScalar());
+                    g.ID = Convert.ToInt32(command.ExecuteScalar());
                 }
                 catch (Exception ex)
                 {
@@ -94,7 +94,7 @@ namespace Database_project
             }
         }
 
-        public void Import(Genre g)
+        public void Import()
         {
             XmlDocument x = new XmlDocument();
             x.Load("data.xml");

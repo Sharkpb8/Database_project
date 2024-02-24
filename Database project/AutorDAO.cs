@@ -32,7 +32,7 @@ namespace Database_project
             }
         }
 
-        public void Save(Autor autor)
+        public void Save(Autor a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -40,14 +40,14 @@ namespace Database_project
 
             using (command = new SqlCommand("insert into autor (name, last_name, birth_date) values (@name, @lastname,@birthdate)", conn))
             {
-                command.Parameters.Add(new SqlParameter("@name", autor.Name));
-                command.Parameters.Add(new SqlParameter("@lastname", autor.Last_name));
-                command.Parameters.Add(new SqlParameter("@birthdate", autor.Birth_date));
+                command.Parameters.Add(new SqlParameter("@name", a.Name));
+                command.Parameters.Add(new SqlParameter("@lastname", a.Last_name));
+                command.Parameters.Add(new SqlParameter("@birthdate", a.Birth_date));
                 try
                 {
                     command.ExecuteNonQuery();
                     command.CommandText = "Select @@Identity";
-                    autor.ID = Convert.ToInt32(command.ExecuteScalar());
+                    a.ID = Convert.ToInt32(command.ExecuteScalar());
                 }
                 catch (Exception ex)
                 {
@@ -78,7 +78,7 @@ namespace Database_project
         }
 
 
-        public void Update(Autor autor)
+        public void Update(Autor a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
 
@@ -86,10 +86,10 @@ namespace Database_project
 
             using (command = new SqlCommand("update autor set name = @name, last_name = @lastname, birth_date = @birthdate " + "where id = @id", conn))
             {
-                command.Parameters.Add(new SqlParameter("@id", autor.ID));
-                command.Parameters.Add(new SqlParameter("@name", autor.Name));
-                command.Parameters.Add(new SqlParameter("@lastname", autor.Last_name));
-                command.Parameters.Add(new SqlParameter("@birthdate", autor.Birth_date));
+                command.Parameters.Add(new SqlParameter("@id", a.ID));
+                command.Parameters.Add(new SqlParameter("@name", a.Name));
+                command.Parameters.Add(new SqlParameter("@lastname", a.Last_name));
+                command.Parameters.Add(new SqlParameter("@birthdate", a.Birth_date));
                 try
                 {
                     command.ExecuteNonQuery();
@@ -102,7 +102,7 @@ namespace Database_project
             }
         }
 
-        public void Import(Autor autor)
+        public void Import()
         {
             XmlDocument x = new XmlDocument();
             x.Load("data.xml");

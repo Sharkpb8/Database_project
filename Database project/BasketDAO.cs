@@ -104,7 +104,7 @@ namespace Database_project
             }
         }
 
-        public void Import(Basket b)
+        public void Import()
         {
             XmlDocument x = new XmlDocument();
             x.Load("data.xml");

@@ -101,7 +101,7 @@ namespace Database_project
             }
         }
 
-        public void Import(Customer c)
+        public void Import()
         {
             XmlDocument x = new XmlDocument();
             x.Load("data.xml");

@@ -346,6 +346,39 @@ internal class Program
                 Console.WriteLine("5. zákazník");
                 Console.WriteLine("6.všech");
                 answer = Console.ReadLine();
+                if (answer == "1")
+                {
+                    Adao.Import();
+                }
+                else if (answer == "2")
+                {
+                    GDAO.Import();
+                }
+                else if (answer == "3") 
+                {
+                    BoDAO.Import();
+                }
+                else if (answer == "4")
+                {
+                    BaDAO.Import();
+                }
+                else if (answer == "5")
+                {
+                    CDAO.Import();
+                }
+                else if(answer == "6")
+                {
+                    Adao.Import();
+                    GDAO.Import();
+                    BoDAO.Import();
+                    BaDAO.Import();
+                    CDAO.Import();
+                }
+                else
+                {
+                    Console.WriteLine("Wrong Input");
+                }
+                Console.WriteLine("Informace byly uspěšně vloženy");
             }
             else
             {
