@@ -9,7 +9,8 @@ internal class Program
     {
         Menu m = new Menu();
         Execute e = new Execute();
-        while (true)
+        bool running = true;
+        while (running)
         {
             m.MenuOptions();
             string answer = Console.ReadLine();
@@ -50,6 +51,11 @@ internal class Program
                     Console.WriteLine("6.všech");
                     answer = Console.ReadLine();
                     e.Import(answer);
+                    break;
+                case "6":
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Program se vypíná");
+                    running = false;
                     break;
                 default: 
                     Console.WriteLine("Wrong input");

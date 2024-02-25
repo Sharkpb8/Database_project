@@ -16,6 +16,7 @@ namespace Database_project
             Console.WriteLine("3. Úprava záznamu");
             Console.WriteLine("4. výpis databáze");
             Console.WriteLine("5. vložit do databáze ze souboru");
+            Console.WriteLine("6. Vypnout program");
         }
 
         //vypíše možnosti pro tabulky
