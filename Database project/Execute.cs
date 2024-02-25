@@ -244,92 +244,89 @@ namespace Database_project
 
         public void Read(string answer)
         {
-            if (answer == "1")
+            switch(answer)
             {
-                Console.WriteLine(" ");
-                Console.WriteLine("List autorů");
-                foreach (Autor i in Adao.GetAll())
-                {
-                    Console.WriteLine(i);
-                }
-                Console.WriteLine(" ");
-            }
-            else if (answer == "2")
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine("List žánrů");
-                foreach (Genre i in GDAO.GetAll())
-                {
-                    Console.WriteLine(i);
-                }
-                Console.WriteLine(" ");
-            }
-            else if (answer == "3")
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine("List knih");
-                foreach (Book i in BoDAO.GetAll())
-                {
-                    Console.WriteLine(i);
-                }
-                Console.WriteLine(" ");
-            }
-            else if (answer == "4")
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine("List košíků");
-                foreach (Basket i in BaDAO.GetAll())
-                {
-                    Console.WriteLine(i);
-                }
-                Console.WriteLine(" ");
-            }
-            else if (answer == "5")
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine("List Zákazníků");
-                foreach (Customer i in CDAO.GetAll())
-                {
-                    Console.WriteLine(i);
-                }
-                Console.WriteLine(" ");
-            }
-            else
-            {
-                Console.WriteLine("Wrong input");
+                case "1":
+                    Console.WriteLine(" ");
+                    Console.WriteLine("List autorů");
+                    foreach (Autor i in Adao.GetAll())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine(" ");
+                    break;
+                case "2":
+                    Console.WriteLine(" ");
+                    Console.WriteLine("List žánrů");
+                    foreach (Genre i in GDAO.GetAll())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine(" ");
+                    break;
+                case "3":
+                    Console.WriteLine(" ");
+                    Console.WriteLine("List knih");
+                    foreach (Book i in BoDAO.GetAll())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine(" ");
+                    break;
+                case "4":
+                    Console.WriteLine(" ");
+                    Console.WriteLine("List košíků");
+                    foreach (Basket i in BaDAO.GetAll())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine(" ");
+                    break;
+                case "5":
+                    Console.WriteLine(" ");
+                    Console.WriteLine("List Zákazníků");
+                    foreach (Customer i in CDAO.GetAll())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine(" ");
+                    break;
+                default:
+                    Console.WriteLine("Wrong Input");
+                    break;
             }
         }
 
         public void Import(string answer)
         {
-            if (answer == "1")
+            switch (answer)
             {
-                Adao.Import();
-            }
-            else if (answer == "2")
-            {
-                GDAO.Import();
-            }
-            else if (answer == "3")
-            {
-                BoDAO.Import();
-            }
-            else if (answer == "4")
-            {
-                BaDAO.Import();
-            }
-            else if (answer == "5")
-            {
-                CDAO.Import();
-            }
-            else if (answer == "6")
-            {
-                Adao.Import();
-                GDAO.Import();
-                BoDAO.Import();
-                BaDAO.Import();
-                CDAO.Import();
-            }
+                case "1":
+                    Adao.Import();
+                    break;
+                case "2":
+                    GDAO.Import();
+                    break;
+                case "3":
+                    BoDAO.Import();
+                    break;
+                case "4":
+                    BaDAO.Import();
+                    break;
+                case "5":
+                    CDAO.Import();
+                    break;
+                case "6":
+                    Adao.Import();
+                    GDAO.Import();
+                    BoDAO.Import();
+                    BaDAO.Import();
+                    CDAO.Import();
+                    break;
+                default:
+                    Console.WriteLine("Wrong input");
+                    break;
+            } 
         }
     }
 }
