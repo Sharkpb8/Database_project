@@ -16,7 +16,7 @@ namespace Database_project
         public string Name { get => name; set => name = value; }
 
         /// <summary>
-        /// Konstruktor třídy žánr.
+        /// Konstruktor třídy genre.
         /// </summary>
         public Genre(int id, string name)
         {
@@ -25,7 +25,7 @@ namespace Database_project
         }
 
         /// <summary>
-        /// Konstruktor třídy žánr pro vytvoření instance s neznámým ID
+        /// Konstruktor třídy genre pro vytvoření instance s neznámým ID
         /// </summary>
         public Genre(string name)
         {

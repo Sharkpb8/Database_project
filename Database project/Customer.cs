@@ -13,11 +13,15 @@ namespace Database_project
         private string last_name;
         private string email;
 
+        //getter a setter pro všechny proměnné
         public int ID { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Last_name { get => last_name; set => last_name = value; }
         public string Email { get => email; set => email = value; }
 
+        /// <summary>
+        /// Konstruktor třídy customer.
+        /// </summary>
         public Customer(int id,string name,string last_name,string email)
         {
             this.ID = id;
@@ -26,6 +30,9 @@ namespace Database_project
             this.email = email;
         }
 
+        /// <summary>
+        /// Konstruktor třídy customer pro vytvoření instance s neznámým ID
+        /// </summary>
         public Customer(string name, string last_name, string email)
         {
             this.ID = 0;
@@ -34,6 +41,10 @@ namespace Database_project
             this.email = email;
         }
 
+        /// <summary>
+        /// Překrytá metoda ToString pro zobrazení informací o zákazníku.
+        /// </summary>
+        /// <returns>Textový řetězec obsahující informace o zákazníku.</returns>
         public override string ToString()
         {
             return $"{ID}. {name} {last_name} {email}";
