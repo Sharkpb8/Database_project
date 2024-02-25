@@ -108,6 +108,7 @@ namespace Database_project
         //importování do tabulky autor
         public void Import()
         {
+            try { 
             XmlDocument x = new XmlDocument();
             x.Load("data.xml");
             XmlNodeList AutorNodes = x.SelectNodes("/data/autor");
@@ -119,6 +120,12 @@ namespace Database_project
 
                 Autor a = new Autor(name, lastName, birthDate);
                 Save(a);
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wrong format of file");
+                Console.WriteLine("");
             }
         }
     }

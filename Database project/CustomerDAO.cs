@@ -108,18 +108,27 @@ namespace Database_project
         //importování do tabulky customer
         public void Import()
         {
-            XmlDocument x = new XmlDocument();
-            x.Load("data.xml");
-            XmlNodeList CustomerNodes = x.SelectNodes("/data/customer");
-            foreach (XmlNode cn in CustomerNodes)
+            try
             {
-                string name = cn.SelectSingleNode("name").InnerText;
-                string last_name = cn.SelectSingleNode("last_name").InnerText;
-                string birth_date = cn.SelectSingleNode("birth_date").InnerText;
+                XmlDocument x = new XmlDocument();
+                x.Load("data.xml");
+                XmlNodeList CustomerNodes = x.SelectNodes("/data/customer");
+                foreach (XmlNode cn in CustomerNodes)
+                {
+                    string name = cn.SelectSingleNode("name").InnerText;
+                    string last_name = cn.SelectSingleNode("last_name").InnerText;
+                    string birth_date = cn.SelectSingleNode("birth_date").InnerText;
 
-                Customer a = new Customer(name, last_name, birth_date);
-                Save(a);
+                    Customer a = new Customer(name, last_name, birth_date);
+                    Save(a);
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wrong format of file");
+                Console.WriteLine("");
+            }
+
         }
     }
 }

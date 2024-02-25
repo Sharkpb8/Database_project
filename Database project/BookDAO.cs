@@ -110,18 +110,26 @@ namespace Database_project
         //importování do tabulky book
         public void Import()
         {
-            XmlDocument x = new XmlDocument();
-            x.Load("data.xml");
-            XmlNodeList BookNodes = x.SelectNodes("/data/book");
-            foreach (XmlNode bn in BookNodes)
+            try
             {
-                int genre_id = int.Parse(bn.SelectSingleNode("genre_id").InnerText);
-                int autor_id = int.Parse(bn.SelectSingleNode("autor_id").InnerText);
-                string name = bn.SelectSingleNode("name").InnerText;
-                string release_date = bn.SelectSingleNode("release_date").InnerText;
+                XmlDocument x = new XmlDocument();
+                x.Load("data.xml");
+                XmlNodeList BookNodes = x.SelectNodes("/data/book");
+                foreach (XmlNode bn in BookNodes)
+                {
+                    int genre_id = int.Parse(bn.SelectSingleNode("genre_id").InnerText);
+                    int autor_id = int.Parse(bn.SelectSingleNode("autor_id").InnerText);
+                    string name = bn.SelectSingleNode("name").InnerText;
+                    string release_date = bn.SelectSingleNode("release_date").InnerText;
 
-                Book a = new Book(genre_id, autor_id, name, release_date);
-                Save(a);
+                    Book a = new Book(genre_id, autor_id, name, release_date);
+                    Save(a);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wrong format of file");
+                Console.WriteLine("");
             }
         }
     }

@@ -101,6 +101,7 @@ namespace Database_project
         //importování do tabulky genre
         public void Import()
         {
+            try { 
             XmlDocument x = new XmlDocument();
             x.Load("data.xml");
             XmlNodeList GenreNodes = x.SelectNodes("/data/genre");
@@ -110,6 +111,12 @@ namespace Database_project
 
                 Genre a = new Genre(name);
                 Save(a);
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wrong format of file");
+                Console.WriteLine("");
             }
         }
     }
