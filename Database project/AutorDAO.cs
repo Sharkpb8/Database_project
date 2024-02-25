@@ -11,6 +11,7 @@ namespace Database_project
 {
     public class AutorDAO
     {
+        //výpis tabulky autor
         public IEnumerable<Autor> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -32,6 +33,7 @@ namespace Database_project
             }
         }
 
+        //uložení do tabulky autor
         public void Save(Autor a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -57,6 +59,7 @@ namespace Database_project
             }
         }
 
+        //smazání z tabulky autor
         public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -77,7 +80,7 @@ namespace Database_project
             }
         }
 
-
+        //update informace v tabulce autor
         public void Update(Autor a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -102,6 +105,7 @@ namespace Database_project
             }
         }
 
+        //importování do tabulky autor
         public void Import()
         {
             XmlDocument x = new XmlDocument();

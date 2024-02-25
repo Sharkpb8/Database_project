@@ -11,6 +11,7 @@ namespace Database_project
 {
     public class CustomerDAO
     {
+        //výpis tabulky customer
         public IEnumerable<Customer> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -33,6 +34,7 @@ namespace Database_project
             }
         }
 
+        //uložení do tabulky customer
         public void Save(Customer c)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -58,6 +60,7 @@ namespace Database_project
             }
         }
 
+        //smazání z tabulky customer
         public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -77,6 +80,7 @@ namespace Database_project
             }
         }
 
+        //update informace v tabulce customer
         public void Update(Customer c)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -101,6 +105,7 @@ namespace Database_project
             }
         }
 
+        //importování do tabulky customer
         public void Import()
         {
             XmlDocument x = new XmlDocument();

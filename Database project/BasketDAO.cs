@@ -11,6 +11,7 @@ namespace Database_project
 {
     public class BasketDAO
     {
+        //výpis tabulky basket
         public IEnumerable<Basket> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -34,6 +35,7 @@ namespace Database_project
             }
         }
 
+        //uložení do tabulky basket
         public void Save(Basket b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -60,6 +62,7 @@ namespace Database_project
             }
         }
 
+        //smazání z tabulky basket
         public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -79,6 +82,7 @@ namespace Database_project
             }
         }
 
+        //update informace v tabulce basket
         public void Update(Basket b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -104,6 +108,7 @@ namespace Database_project
             }
         }
 
+        //importování do tabulky basket
         public void Import()
         {
             XmlDocument x = new XmlDocument();

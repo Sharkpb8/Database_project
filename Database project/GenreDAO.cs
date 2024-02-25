@@ -11,6 +11,7 @@ namespace Database_project
 {
     public class GenreDAO
     {
+        ////výpis tabulky genre
         public IEnumerable<Genre> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -30,6 +31,7 @@ namespace Database_project
             }
         }
 
+        //uložení do tabulky genre
         public void Save(Genre g)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -53,6 +55,7 @@ namespace Database_project
             }
         }
 
+        //smazání z tabulky genre
         public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -72,6 +75,7 @@ namespace Database_project
             }
         }
 
+        //update informace v tabulce genre
         public void Update(Genre g)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -94,6 +98,7 @@ namespace Database_project
             }
         }
 
+        //importování do tabulky genre
         public void Import()
         {
             XmlDocument x = new XmlDocument();

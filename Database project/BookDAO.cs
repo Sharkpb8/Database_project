@@ -11,6 +11,7 @@ namespace Database_project
 {
     public class BookDAO
     {
+        //výpis tabulky book
         public IEnumerable<Book> GetAll()
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -33,6 +34,7 @@ namespace Database_project
             }
         }
 
+        //uložení do tabulky book
         public void Save(Book b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -59,7 +61,7 @@ namespace Database_project
             }
         }
 
-
+        //smazání z tabulky book
         public void Delete(int a)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -79,6 +81,7 @@ namespace Database_project
             }
         }
 
+        //update informace v tabulce book
         public void Update(Book b)
         {
             SqlConnection conn = DatabaseSingleton.GetInstance();
@@ -104,6 +107,7 @@ namespace Database_project
             }
         }
 
+        //importování do tabulky book
         public void Import()
         {
             XmlDocument x = new XmlDocument();
