@@ -12,14 +12,17 @@ This C# application provides functions to interact with database for library.
 
 ## Usage
 1. Open `app.config`
-2. change parametrs that you need
-3. Open the exe file
-4. choose what action you want to execute
-5. choose from what table you want to execute the action
+2. If there is none create in `Database project` new file called `app.config`
+3. Use Configuration bellow to set up correctly
+2. Change parametrs that you need
+3. Open project in your favorite IDE
+4. Run the application.
+4. Choose what action you want to execute
+5. Choose from what table you want to execute the action
 
 
 ## Configuration
-Ensure to configure proply the `app.config` file for program to run corectly.
+Ensure to configure proply the `app.config` file for program to run corectly.  
 Here is example of correctly filed `app.config`:
 
 ```xml
