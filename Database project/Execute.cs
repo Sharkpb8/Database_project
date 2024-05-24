@@ -10,6 +10,7 @@ namespace Database_project
     {
         AutorDAO Adao = new AutorDAO();
         GenreDAO GDAO = new GenreDAO();
+        PublisherDAO PDAO = new PublisherDAO();
         BookDAO BoDAO = new BookDAO();
         CustomerDAO CDAO = new CustomerDAO();
         BasketDAO BaDAO = new BasketDAO();
@@ -38,7 +39,18 @@ namespace Database_project
                 GDAO.Save(a);
                 Console.WriteLine(" ");
             }
-            else if (answer == "3")
+            else if(answer == "3")
+            {
+                Console.WriteLine(" ");
+                Console.Write("Název vydavatele: ");
+                string name = Console.ReadLine();
+                Console.Write("Lokace vydavatele: ");
+                string location = Console.ReadLine();
+                Publisher a = new Publisher(name,location);
+                PDAO.Save(a);
+                Console.WriteLine(" ");
+            }
+            else if (answer == "4")
             {
                 Console.WriteLine(" ");
                 Console.Write("Id žánru: ");
@@ -53,7 +65,7 @@ namespace Database_project
                 BoDAO.Save(a);
                 Console.WriteLine(" ");
             }
-            else if (answer == "4")
+            else if (answer == "5")
             {
                 Console.WriteLine(" ");
                 Console.Write("Id zákazníka: ");
@@ -80,7 +92,7 @@ namespace Database_project
                 BaDAO.Save(a);
                 Console.WriteLine(" ");
             }
-            else if (answer == "5")
+            else if (answer == "6")
             {
                 Console.WriteLine(" ");
                 Console.Write("Jmeno zákazníka: ");
@@ -117,7 +129,7 @@ namespace Database_project
                 GDAO.Delete(id);
                 Console.WriteLine(" ");
             }
-            else if (answer == "3")
+            else if (answer == "4")
             {
                 Console.WriteLine(" ");
                 Console.Write("Zadajte id knihy kterou chcete smazat: ");
@@ -125,7 +137,7 @@ namespace Database_project
                 BoDAO.Delete(id);
                 Console.WriteLine(" ");
             }
-            else if (answer == "4")
+            else if (answer == "5")
             {
                 Console.WriteLine(" ");
                 Console.Write("Zadajte id košíku který chcete smazat: ");
@@ -133,7 +145,7 @@ namespace Database_project
                 BaDAO.Delete(id);
                 Console.WriteLine(" ");
             }
-            else if (answer == "5")
+            else if (answer == "6")
             {
                 Console.WriteLine(" ");
                 Console.Write("Zadajte id zákazníka kterého chcete smazat: ");
@@ -175,7 +187,7 @@ namespace Database_project
                 GDAO.Update(a);
                 Console.WriteLine(" ");
             }
-            else if (answer == "3")
+            else if (answer == "4")
             {
                 Console.WriteLine(" ");
                 Console.Write("Zadejte id knihy kterou chcete upravit: ");
@@ -192,7 +204,7 @@ namespace Database_project
                 BoDAO.Update(a);
                 Console.WriteLine(" ");
             }
-            else if (answer == "4")
+            else if (answer == "5")
             {
                 Console.WriteLine(" ");
                 Console.Write("Zadejte id košíku který chcete upravit: ");
@@ -221,7 +233,7 @@ namespace Database_project
                 BaDAO.Update(a);
                 Console.WriteLine(" ");
             }
-            else if (answer == "5")
+            else if (answer == "6")
             {
                 Console.WriteLine(" ");
                 Console.Write("Zadejte id zákazníka kterého chcete upravit: ");
@@ -264,7 +276,7 @@ namespace Database_project
                     }
                     Console.WriteLine(" ");
                     break;
-                case "3":
+                case "4":
                     Console.WriteLine(" ");
                     Console.WriteLine("List knih");
                     foreach (Book i in BoDAO.GetAll())
@@ -273,7 +285,7 @@ namespace Database_project
                     }
                     Console.WriteLine(" ");
                     break;
-                case "4":
+                case "5":
                     Console.WriteLine(" ");
                     Console.WriteLine("List košíků");
                     foreach (Basket i in BaDAO.GetAll())
@@ -282,7 +294,7 @@ namespace Database_project
                     }
                     Console.WriteLine(" ");
                     break;
-                case "5":
+                case "6":
                     Console.WriteLine(" ");
                     Console.WriteLine("List Zákazníků");
                     foreach (Customer i in CDAO.GetAll())
@@ -307,16 +319,16 @@ namespace Database_project
                 case "2":
                     GDAO.Import();
                     break;
-                case "3":
+                case "4":
                     BoDAO.Import();
                     break;
-                case "4":
+                case "5":
                     BaDAO.Import();
                     break;
-                case "5":
+                case "6":
                     CDAO.Import();
                     break;
-                case "6":
+                case "7":
                     Adao.Import();
                     GDAO.Import();
                     BoDAO.Import();

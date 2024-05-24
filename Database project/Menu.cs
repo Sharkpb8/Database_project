@@ -24,9 +24,10 @@ namespace Database_project
         {
             Console.WriteLine("1. autor");
             Console.WriteLine("2. žánr");
-            Console.WriteLine("3. knihy");
-            Console.WriteLine("4. košík");
-            Console.WriteLine("5. zákazník");
+            Console.WriteLine("3. vydavatel");
+            Console.WriteLine("4. knihy");
+            Console.WriteLine("5. košík");
+            Console.WriteLine("6. zákazník");
         }
     }
 }

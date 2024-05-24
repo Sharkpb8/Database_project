@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Database_project
 {
-    internal class Publisher
+    public class Publisher
     {
         private int id;
         private string name;
