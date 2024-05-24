@@ -20,7 +20,7 @@ namespace Database_project
         /// <summary>
         /// Konstruktor třídy publisher.
         /// </summary>
-        public Publisher(int id, string name)
+        public Publisher(int id, string name, string location)
         {
             this.ID = id;
             this.name = name;
@@ -30,7 +30,7 @@ namespace Database_project
         /// <summary>
         /// Konstruktor třídy publisher pro vytvoření instance s neznámým ID
         /// </summary>
-        public Publisher(string name)
+        public Publisher(string name, string location)
         {
             this.ID = 0;
             this.name = name;
