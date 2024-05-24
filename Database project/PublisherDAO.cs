@@ -84,7 +84,7 @@ namespace Database_project
 
             SqlCommand command = null;
 
-            using (command = new SqlCommand("update publisher set name = @name, location = @location" + "where id = @id", conn))
+            using (command = new SqlCommand("update publisher set name = @name, location = @location " + "where id = @id", conn))
             {
                 command.Parameters.Add(new SqlParameter("@id", p.ID));
                 command.Parameters.Add(new SqlParameter("@name", p.Name));

@@ -129,6 +129,14 @@ namespace Database_project
                 GDAO.Delete(id);
                 Console.WriteLine(" ");
             }
+            else if (answer == "3")
+            {
+                Console.WriteLine(" ");
+                Console.Write("Zadajte id vydavatele kterého chcete smazat: ");
+                int id = Convert.ToInt32(Console.ReadLine());
+                PDAO.Delete(id);
+                Console.WriteLine(" ");
+            }
             else if (answer == "4")
             {
                 Console.WriteLine(" ");
@@ -185,6 +193,19 @@ namespace Database_project
                 string name = Console.ReadLine();
                 Genre a = new Genre(id, name);
                 GDAO.Update(a);
+                Console.WriteLine(" ");
+            }
+            else if (answer == "3")
+            {
+                Console.WriteLine(" ");
+                Console.Write("Zadejte id vydavatele kterého chcete upravit: ");
+                int id = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Jméno upraveného vydavatele: ");
+                string name = Console.ReadLine();
+                Console.Write("Jméno upravené lokality: ");
+                string location = Console.ReadLine();
+                Publisher a = new Publisher(id, name,location);
+                PDAO.Update(a);
                 Console.WriteLine(" ");
             }
             else if (answer == "4")
@@ -276,6 +297,15 @@ namespace Database_project
                     }
                     Console.WriteLine(" ");
                     break;
+                case "3":
+                    Console.WriteLine(" ");
+                    Console.WriteLine("List vydavatelu");
+                    foreach (Publisher i in PDAO.GetAll())
+                    {
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine(" ");
+                    break;
                 case "4":
                     Console.WriteLine(" ");
                     Console.WriteLine("List knih");
@@ -314,23 +344,34 @@ namespace Database_project
             switch (answer)
             {
                 case "1":
+                    Console.WriteLine(" ");
                     Adao.Import();
                     break;
                 case "2":
+                    Console.WriteLine(" ");
                     GDAO.Import();
                     break;
+                case "3":
+                    Console.WriteLine(" ");
+                    PDAO.Import();
+                    break;
                 case "4":
+                    Console.WriteLine(" ");
                     BoDAO.Import();
                     break;
                 case "5":
+                    Console.WriteLine(" ");
                     BaDAO.Import();
                     break;
                 case "6":
+                    Console.WriteLine(" ");
                     CDAO.Import();
                     break;
                 case "7":
+                    Console.WriteLine(" ");
                     Adao.Import();
                     GDAO.Import();
+                    PDAO.Import();
                     BoDAO.Import();
                     BaDAO.Import();
                     CDAO.Import();
