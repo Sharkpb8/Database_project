@@ -15,6 +15,9 @@ This C# application provides functions to interact with database for library.
 2. If there is none create in `Database project` new file called `app.config`
 3. Use Configuration bellow to set up correctly
 2. Change parametrs that you need
+3. Open SQL Server Management Studio
+4. Open `knihovna.sql`
+5. select all and execute it
 3. Open project in your favorite IDE
 4. Run the application.
 4. Choose what action you want to execute
