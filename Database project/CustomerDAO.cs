@@ -117,9 +117,9 @@ namespace Database_project
                 {
                     string name = cn.SelectSingleNode("name").InnerText;
                     string last_name = cn.SelectSingleNode("last_name").InnerText;
-                    string birth_date = cn.SelectSingleNode("birth_date").InnerText;
+                    string email = cn.SelectSingleNode("email").InnerText;
 
-                    Customer a = new Customer(name, last_name, birth_date);
+                    Customer a = new Customer(name, last_name, email);
                     Save(a);
                 }
             }

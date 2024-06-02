@@ -48,7 +48,7 @@ internal class Program
                     Console.WriteLine(" ");
                     Console.WriteLine("Do které tabulky chcete importovat data");
                     m.TableOptions();
-                    Console.WriteLine("6. všech");
+                    Console.WriteLine("7. všech");
                     answer = Console.ReadLine();
                     e.Import(answer);
                     break;

@@ -377,8 +377,8 @@ namespace Database_project
                     GDAO.Import();
                     PDAO.Import();
                     BoDAO.Import();
-                    BaDAO.Import();
                     CDAO.Import();
+                    BaDAO.Import();
                     break;
                 default:
                     Console.WriteLine("Wrong input");

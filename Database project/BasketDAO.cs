@@ -121,7 +121,7 @@ namespace Database_project
                     int customer_id = int.Parse(bn.SelectSingleNode("customer_id").InnerText);
                     int book_id = int.Parse(bn.SelectSingleNode("book_id").InnerText);
                     string borrow_date = bn.SelectSingleNode("borrow_date").InnerText;
-                    string ebt = bn.SelectSingleNode("ebt").InnerText;
+                    string ebt = Convert.ToString(bn.SelectSingleNode("ebt").InnerText);
 
                     Basket a = new Basket(customer_id, book_id, borrow_date, ebt);
                     Save(a);
