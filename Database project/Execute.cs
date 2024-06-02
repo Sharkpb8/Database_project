@@ -57,11 +57,13 @@ namespace Database_project
                 int genreid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Id autora: ");
                 int autorid = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Id vydavatele");
+                int publisherid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Jmeno knihy: ");
                 string name = Console.ReadLine();
                 Console.Write("Den vydání: ");
                 string releasedate = Console.ReadLine();
-                Book a = new Book(genreid, autorid, name, releasedate);
+                Book a = new Book(genreid, autorid,publisherid, name, releasedate);
                 BoDAO.Save(a);
                 Console.WriteLine(" ");
             }
@@ -217,11 +219,13 @@ namespace Database_project
                 int genreid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Id autora: ");
                 int autorid = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Id vydavatele");
+                int publisherid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Jmeno upravené knihy: ");
                 string name = Console.ReadLine();
                 Console.Write("Den vydání: ");
                 string releasedate = Console.ReadLine();
-                Book a = new Book(id, genreid, autorid, name, releasedate);
+                Book a = new Book(id, genreid, autorid,publisherid, name, releasedate);
                 BoDAO.Update(a);
                 Console.WriteLine(" ");
             }
