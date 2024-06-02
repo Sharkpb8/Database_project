@@ -57,7 +57,7 @@ namespace Database_project
                 int genreid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Id autora: ");
                 int autorid = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Id vydavatele");
+                Console.Write("Id vydavatele: ");
                 int publisherid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Jmeno knihy: ");
                 string name = Console.ReadLine();
@@ -219,7 +219,7 @@ namespace Database_project
                 int genreid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Id autora: ");
                 int autorid = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Id vydavatele");
+                Console.Write("Id vydavatele: ");
                 int publisherid = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Jmeno upravené knihy: ");
                 string name = Console.ReadLine();
