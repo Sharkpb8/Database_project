@@ -286,6 +286,7 @@ namespace Database_project
                 case "1":
                     Console.WriteLine(" ");
                     Console.WriteLine("List autorů");
+                    Console.WriteLine("[id],[jmeno],[prijmeni],[den narozeni]");
                     foreach (Autor i in Adao.GetAll())
                     {
                         Console.WriteLine(i);
@@ -295,6 +296,7 @@ namespace Database_project
                 case "2":
                     Console.WriteLine(" ");
                     Console.WriteLine("List žánrů");
+                    Console.WriteLine("[id],[nazev]");
                     foreach (Genre i in GDAO.GetAll())
                     {
                         Console.WriteLine(i);
@@ -304,6 +306,7 @@ namespace Database_project
                 case "3":
                     Console.WriteLine(" ");
                     Console.WriteLine("List vydavatelu");
+                    Console.WriteLine("[id],[nazev],[lokace]");
                     foreach (Publisher i in PDAO.GetAll())
                     {
                         Console.WriteLine(i);
@@ -313,6 +316,7 @@ namespace Database_project
                 case "4":
                     Console.WriteLine(" ");
                     Console.WriteLine("List knih");
+                    Console.WriteLine("[id],[zanr_id],[autor_id],[vydavatel_id],[nazev],[den vydani]");
                     foreach (Book i in BoDAO.GetAll())
                     {
                         Console.WriteLine(i);
@@ -322,6 +326,7 @@ namespace Database_project
                 case "5":
                     Console.WriteLine(" ");
                     Console.WriteLine("List košíků");
+                    Console.WriteLine("[id],[zakaznik_id],[kniha_id],[den vypujceni],[prodlouzena doba]");
                     foreach (Basket i in BaDAO.GetAll())
                     {
                         Console.WriteLine(i);
@@ -331,6 +336,7 @@ namespace Database_project
                 case "6":
                     Console.WriteLine(" ");
                     Console.WriteLine("List Zákazníků");
+                    Console.WriteLine("[id],[jmeno],[prijmeni],[email]");
                     foreach (Customer i in CDAO.GetAll())
                     {
                         Console.WriteLine(i);
